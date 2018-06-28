@@ -2,14 +2,21 @@
   <section class="section">
     <div class="field">
      <div class="control">
-      <input class="input is-primary" type="text" placeholder="Primary input">
+      <input class="input is-primary" type="text" placeholder="Primary input" v-model="task">
+      <p>{{ task }}</p>
      </div>
     </div>
-    <a class="button is-primary">Primary</a>
+    <a class="button is-primary" @click="$emit(task)">Primary</a>
   </section>
 </template>
 
 <script>
+  export default {
+    name: 'addForm',
+    data: function () {
+      return { task: "" }
+    }
+  }
 </script>
 
 <style lang="scss">
