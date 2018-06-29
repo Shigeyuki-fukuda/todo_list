@@ -3,7 +3,6 @@
     <div class="field">
      <div class="control">
       <input class="input is-primary" type="text" placeholder="Primary input" v-model="task">
-      <p>{{ task }}</p>
      </div>
     </div>
     <a class="button is-primary" @click="$emit(task)">Primary</a>
