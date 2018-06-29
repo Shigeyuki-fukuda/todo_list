@@ -2,10 +2,10 @@
   <section class="section">
     <div class="field">
      <div class="control">
-      <input class="input is-primary" type="text" placeholder="Primary input" v-model="task">
+      <input class="input is-primary" type="text" placeholder="Primary input" v-model="todo">
      </div>
     </div>
-    <a class="button is-primary" @click="$emit(task)">Primary</a>
+    <a class="button is-primary" @click="addTodo">追加</a>
   </section>
 </template>
 
@@ -13,7 +13,15 @@
   export default {
     name: 'addForm',
     data: function () {
-      return { task: "" }
+      return { todo: "" }
+    },
+    props: [
+      'todos'
+    ],
+    methods: {
+      addTodo: function () {
+        this.$emit('addTodo', this.todo)
+      }
     }
   }
 </script>

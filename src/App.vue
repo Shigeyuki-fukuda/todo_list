@@ -1,6 +1,7 @@
 <template>
  <section class="section">
    <AddForm></AddForm>
+   <AddForm @addTodo="addTodo" v-bind:todos="todos"></AddForm>
   </section>
 </template>
 
@@ -13,11 +14,11 @@ export default {
     AddForm
   },
   data: function () {
-    return { tasks: [] }
+    return { todos: [] }
   },
   methods: {
-    addTask(text) {
-      this.tasks.push({ task: text })
+    addTodo(text) {
+      this.todos.push(text)
     }
   }
 }
