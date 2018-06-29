@@ -13,11 +13,11 @@ export default {
     AddForm
   },
   data: function () {
-    return { tasks: [] }
+    return { todos: [] }
   },
   methods: {
     addTask(text) {
-      this.tasks.push({ task: text })
+      this.todos.push({ todo: text })
     }
   }
 }
