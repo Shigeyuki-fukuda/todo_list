@@ -5,7 +5,7 @@
       <input class="input is-primary" type="text" placeholder="Primary input" v-model="todo">
      </div>
     </div>
-    <a class="button is-primary" @click="$emit(todo)">Primary</a>
+    <a class="button is-primary" @click="addTodo">追加</a>
   </section>
 </template>
 
@@ -14,6 +14,14 @@
     name: 'addForm',
     data: function () {
       return { todo: "" }
+    },
+    props: [
+      'todos'
+    ],
+    methods: {
+      addTodo: function () {
+        this.$emit('addTodo', this.todo)
+      }
     }
   }
 </script>
