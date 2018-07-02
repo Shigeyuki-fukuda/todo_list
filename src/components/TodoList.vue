@@ -1,14 +1,20 @@
 <template>
-  <section class="section">
-
-  </section>
+  <li>
+    {{ todo.list }}
+    <a class="button is-primary" @click="deleteTodo">削除</a>
+  </li>
 </template>
 
 <script>
   export default {
     name: 'todoList',
-    data: function () {
-      return { todo: "" }
+    props: [
+      'todo'
+    ],
+    methods: {
+      deleteTodo: function () {
+        this.$emit('deleteTodo', this.todo.index)
+      }
     }
   }
 </script>

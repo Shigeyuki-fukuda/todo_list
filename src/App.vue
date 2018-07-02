@@ -1,23 +1,31 @@
 <template>
  <section class="section">
-   <AddForm @addTodo="addTodo" v-bind:todos="todos"></AddForm>
+   <AddForm @addTodo="addTodo"></AddForm>
+   <ul>
+     <TodoList @deleteTodo="deleteTodo" v-for="(todo, index) in todos"  v-bind:todo="{ list: todo, index: index }"></TodoList>
+   </ul>
   </section>
 </template>
 
 <script>
 import AddForm from './components/AddForm.vue'
+import TodoList from './components/TodoList.vue'
 
 export default {
   name: 'app',
   components: {
-    AddForm
+    AddForm,
+    TodoList
   },
   data: function () {
     return { todos: [] }
   },
   methods: {
-    addTodo(text) {
+    addTodo (text) {
       this.todos.push(text)
+    },
+    deleteTodo (index) {
+      this.todos.splice(index, 1)
     }
   }
 }
