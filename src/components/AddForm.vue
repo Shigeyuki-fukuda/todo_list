@@ -15,9 +15,6 @@
     data: function () {
       return { todo: "" }
     },
-    props: [
-      'todos'
-    ],
     methods: {
       addTodo: function () {
         this.$emit('addTodo', this.todo)
