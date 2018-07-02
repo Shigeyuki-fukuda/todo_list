@@ -1,6 +1,5 @@
 <template>
  <section class="section">
-   <AddForm></AddForm>
    <AddForm @addTodo="addTodo" v-bind:todos="todos"></AddForm>
   </section>
 </template>
