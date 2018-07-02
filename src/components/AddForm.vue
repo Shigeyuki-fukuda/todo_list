@@ -2,7 +2,7 @@
   <section class="section">
     <div class="field">
      <div class="control">
-      <input class="input is-primary" type="text" placeholder="Primary input" v-model="todo">
+      <input class="input is-primary" type="text" placeholder="TODOを追加してください" v-model="todo">
      </div>
     </div>
     <a class="button is-primary" @click="addTodo">追加</a>
