@@ -2,7 +2,7 @@
  <section class="section">
    <AddForm @addTodo="addTodo"></AddForm>
    <ul>
-     <TodoList @deleteTodo="deleteTodo" v-for="(todo, index) in todos"  v-bind:todo="{ list: todo, index: index }"></TodoList>
+     <TodoList @deleteTodo="deleteTodo" v-for="(todo, index) in todos"  v-bind:todo="{ name: todo.name, status: todo.status, index: index }"></TodoList>
    </ul>
   </section>
 </template>
@@ -22,7 +22,10 @@ export default {
   },
   methods: {
     addTodo (text) {
-      this.todos.push(text)
+      this.todos.push({
+        name: text.name,
+        status: false
+      })
     },
     deleteTodo (index) {
       this.todos.splice(index, 1)

@@ -1,6 +1,7 @@
 <template>
   <li>
-    {{ todo.list }}
+    {{ todo.name }} /
+    {{ todo.status }}
     <a class="button is-primary" @click="deleteTodo">削除</a>
   </li>
 </template>
