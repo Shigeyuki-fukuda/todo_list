@@ -2,7 +2,7 @@
  <section class="section">
    <AddForm @addTodo="addTodo"></AddForm>
    <ul>
-     <TodoList @deleteTodo="deleteTodo" v-for="(todo, index) in todos"  v-bind:todo="{ name: todo.name, status: todo.status, index: index }"></TodoList>
+     <TodoList @checkedTodo="checkedTodo" @deleteTodo="deleteTodo" v-for="(todo, index) in todos"  v-bind:todo="{ name: todo.name, status: todo.status, index: index }"></TodoList>
    </ul>
   </section>
 </template>
@@ -29,6 +29,9 @@ export default {
     },
     deleteTodo (index) {
       this.todos.splice(index, 1)
+    },
+    checkedTodo (index) {
+      this.todos[index].status = !this.todos[index].status
     }
   }
 }
