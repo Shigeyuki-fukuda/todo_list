@@ -2,7 +2,7 @@
  <section class="section">
    <AddForm @addTodo="addTodo"></AddForm>
    <ul>
-     <TodoList @checkedTodo="checkedTodo" @deleteTodo="deleteTodo" v-for="(todo, index) in todos"  v-bind:todo="{ name: todo.name, status: todo.status, index: index }"></TodoList>
+     <TodoList @checkedTodo="checkedTodo" @deleteTodo="deleteTodo" v-for="(todo, index) in todos" :key="index"  v-bind:todo="{ name: todo.name, status: todo.status, index: index }"></TodoList>
    </ul>
   </section>
 </template>
