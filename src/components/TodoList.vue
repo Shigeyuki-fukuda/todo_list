@@ -2,7 +2,6 @@
   <li>
     <label class="checkbox" v-bind:class="{ done: todo.status }">
       <input type="checkbox" v-on:input="checkedTodo">
-      完了
       {{ todo.name }}
     </label>
     <a class="button is-primary" @click="deleteTodo">削除</a>
